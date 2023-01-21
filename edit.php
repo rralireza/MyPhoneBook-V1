@@ -4,8 +4,6 @@
     $LogObjects = new Log();
     $PhoneBookObjects = new Contacts();
 
-    
-
     $contact_id = $_GET['id'];
 
     if (isset($_POST['btn'])) {
@@ -14,7 +12,6 @@
         $email = $_POST['email'];
         $PhoneBookObjects->editContacts($contact_id , $name , $phone , $email);   
     }
-
     
 ?>
 
