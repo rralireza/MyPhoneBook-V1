@@ -109,7 +109,10 @@
         
         
         
-        <footer class="text-center">Ahmad Al-Shahawi 2019.All rights reserved</footer>
+        <footer class="text-center">
+            Ahmad Al-Shahawi 2019.All rights reserved
+            Back-End is Developed by The_ARN 2023    
+        </footer>
         
            <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
