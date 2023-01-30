@@ -5,7 +5,8 @@
         public $phone;
         public $email;
 
-        public function addContact($user_id , $name , $phone , $email) {
+        public function addContact($user_id , $name , $phone , $email) 
+        {
             $myObject = new Log();
             $connect = $myObject->config();
             $result = $connect->prepare("INSERT INTO contacts(user_id , name , phonenumber , email) VALUES (? , ? , ? , ?)");
@@ -16,7 +17,8 @@
             $result->execute();
         }
 
-        public function showContacts ($user_id) {
+        public function showContacts ($user_id) 
+        {
             $connetctionObj = new Log();
             $connect = $connetctionObj->config();
             $result = $connect->prepare("SELECT * FROM contacts INNER JOIN users ON contacts.user_id = users.id WHERE user_id = ?");
@@ -26,7 +28,8 @@
             return $row;
         }
 
-        public function deleteContacts ($user_id) {
+        public function deleteContacts ($user_id) 
+        {
             $connetctionObj = new Log();
             $connect = $connetctionObj->config();
             $result = $connect->prepare("DELETE FROM contacts WHERE contact_id = ?");
@@ -38,7 +41,8 @@
             header("location: index.php?id=$row->id");
         }
 
-        public function editContacts($contacts_id , $name , $phonenumber , $email) {
+        public function editContacts($contacts_id , $name , $phonenumber , $email) 
+        {
             $connetctionObj = new Log();
             $connect = $connetctionObj->config();
             $result = $connect->prepare("UPDATE contacts SET name = ? , phonenumber = ? , email = ? WHERE contact_id = $contacts_id");
