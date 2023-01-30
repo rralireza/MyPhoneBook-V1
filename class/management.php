@@ -8,12 +8,14 @@
         public $username;
         public $password;
 
-        public function config() {
+        public function config() 
+        {
             $connect = new PDO('mysql:host=localhost;dbname=phonebook;' , 'root' , '');
             return $connect;
         }
 
-        public function register($firstname , $lastname , $email , $username , $password) {
+        public function register($firstname , $lastname , $email , $username , $password) 
+        {
             $configClass = new Log();
             $connect = $configClass->config();
             $result = $connect->prepare("INSERT INTO users (firstname , lastname , user_email , username , password) VALUES (? , ? , ? , ? , ?)");
@@ -26,7 +28,8 @@
             return $result;
         }
 
-        public function login($username , $password) {
+        public function login($username , $password) 
+        {
             session_start();
             $configClass = new Log();
             $connect = $configClass->config();
@@ -43,13 +46,15 @@
             }
         }
 
-        public function session() {
+        public function session() 
+        {
             if (! isset($_SESSION['name']) ) {
                 header("location: login.php?failed");
             }
         }
 
-        public function logout() {
+        public function logout() 
+        {
             session_start();
             session_unset();
             session_destroy();
